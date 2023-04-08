@@ -1,0 +1,1 @@
+<h1>Number Is : {{ $number['a'] }}</h1>
