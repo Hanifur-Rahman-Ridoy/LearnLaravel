@@ -10,8 +10,28 @@ edit er jonno r ekta form e jai -> edit
 editt form update korle -> update
 
 delet  korle ->destroy
---------------------------------------
-Controller->Invokable Method
- (route er modde jekono method e deua hok nah kno controller er just akty deafult method __invoka tyb execute hove  )
 
-tarminar -> php artisan make:controller ExampleController --invokable
+----------------URL-----------------
+
+
+ function contryData(Request $request)
+    {
+        // dd($request->all());     //Form Data
+        // dd($request->url());     //Page URL
+        //  dd($request->path());     //Page Path
+        // dd($request->ip());       //Ip Adress
+    }
+
+------------------Session-----------------------
+
+  function test(Request $request)
+    {
+        // session e value set kora way One
+        session(['nameTwo' => 'Hanifur']);
+
+        // session e value set kora way Two
+        $request->session()->put('age', '24');
+
+        //session er value deka
+        return $request->session()->all();
+    }

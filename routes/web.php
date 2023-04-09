@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\InvokableController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,15 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('/contry-data', function () {
 
-    return view('country');
-})->middleware('country');
+Route::get('/', [CountryController::class, 'demo']);
 
-
-Route::get('/', function () {
-    return view('home');
-});
-
-
-Route::get('/contact', InvokableController::class);
+Route::post('/student/store', [StudentController::class, 'storeContact'])->name('store.student');
