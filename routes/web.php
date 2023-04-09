@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InvokableController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::view('/home', 'home');
 
-Route::get('/home', function () {
+Route::post('/contry-data', function () {
+
+    return view('country');
+})->middleware('country');
+
+
+Route::get('/', function () {
     return view('home');
-})->name('home.us');
+});
+
+
+Route::get('/contact', InvokableController::class);

@@ -15,6 +15,13 @@ class CountryMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        // Rules Create
+
+        $array = ['Bangladesh','China','India'];
+
+        if (in_array($request->country, $array)) {
+            return $next($request);
+        }
+        return redirect()->to('/');
     }
 }

@@ -1,0 +1,17 @@
+route  metod name by action
+-------------------------------
+
+open form -> create
+
+submit form -> store
+
+edit er jonno r ekta form e jai -> edit
+
+editt form update korle -> update
+
+delet  korle ->destroy
+--------------------------------------
+Controller->Invokable Method
+ (route er modde jekono method e deua hok nah kno controller er just akty deafult method __invoka tyb execute hove  )
+
+tarminar -> php artisan make:controller ExampleController --invokable
